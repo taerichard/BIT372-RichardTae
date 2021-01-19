@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -29,9 +30,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(this, CreateEventActivity.class);
         FloatingActionButton fab = findViewById(R.id.add_event_btn);
-        fab.setOnClickListener((view) -> startActivity(intent));
+        //fab.setOnClickListener((view) -> startActivity(intent));
         eventList = findViewById(R.id.event_list);
     }
 
@@ -46,16 +46,19 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
-            case R.id.action_create : {
-
+            case R.id.action_add : {
+                Log.i("INFO","BACK");
+                Intent intent = new Intent(this, CreateEventActivity.class);
+                startActivity(intent);
+                break;
             }
         }
         return super.onOptionsItemSelected(item);

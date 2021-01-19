@@ -7,8 +7,6 @@
         <item
             android:id="@+id/nav_home"
             android:title="S"
-
             />
-
     </group>
 </menu>

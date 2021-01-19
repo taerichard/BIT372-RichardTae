@@ -31,6 +31,7 @@ static{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i("INFO","COMING FROM CreateActivity");
         setContentView(R.layout.activity_create_event);
 
         Spinner eventType = findViewById(R.id.event_image_type);
