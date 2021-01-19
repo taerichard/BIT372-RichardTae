@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -25,13 +26,14 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView eventList;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         FloatingActionButton fab = findViewById(R.id.add_event_btn);
-        //fab.setOnClickListener((view) -> startActivity(intent));
+        fab.hide();
         eventList = findViewById(R.id.event_list);
     }
 
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
-            case R.id.action_add : {
+            case R.id.action_favorite : {
                 Log.i("INFO","BACK");
                 Intent intent = new Intent(this, CreateEventActivity.class);
                 startActivity(intent);

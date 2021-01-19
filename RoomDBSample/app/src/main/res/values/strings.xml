@@ -6,4 +6,5 @@
         <item>Gathering</item>
         <item>Food</item>
     </string-array>
+<string name="action_add">Add</string>
 </resources>
