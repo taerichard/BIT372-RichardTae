@@ -45,6 +45,8 @@ public class CreateEventActivity extends AppCompatActivity {
         EditText date = findViewById(R.id.event_date);
         
         // TODO: Create a repo object
+        EventDb db = Room.databaseBuilder(getApplicationContext(), EventDb.class, EventDb.DATABASE_NAME).allowMainThreadQueries().build();
+        EventDao dao = db.eventDao();
 
         createBtn.setOnClickListener((view) -> {
             String titleStr = title.getText().toString();
@@ -56,7 +58,7 @@ public class CreateEventActivity extends AppCompatActivity {
             }
             
             // TODO: store the event in the repo
-
+            dao.insertEvent(new Event(titleStr, dateStr, images.get(typeKey)));
             title.setText("");
             date.setText("");
             Toast.makeText(this, "Event Created", Toast.LENGTH_LONG).show();
