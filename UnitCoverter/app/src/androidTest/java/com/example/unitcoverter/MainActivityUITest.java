@@ -44,12 +44,23 @@ public class MainActivityUITest {
     public void should_not_enter_empty_fah() {
         onView(withId(R.id.convert_btn)).perform(click());
         onView(withId(R.id.celcius_text)).check(matches(withText("ºC")));
-    }*/
+    }
 
     @Test
-    public void can_enter_pounds(){
+    public void accept_empty_value(){
         onView(withId(R.id.pound_input)).perform(typeText(""));
         onView(withId(R.id.poundToKg_Button)).perform(click());
         onView(withId(R.id.kg_text)).check(matches(withText("")));
+    }
+*/
+    @Test
+    public void can_enter_pounds(){
+        // input
+        onView(withId(R.id.pound_input)).perform(typeText("100"));
+        //click
+        onView(withId(R.id.poundToKg_Button)).perform(click());
+        //result
+        onView(withId(R.id.kg_text)).check(matches(withText("45.359237")));
+
     }
 }
