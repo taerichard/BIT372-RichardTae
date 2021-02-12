@@ -14,4 +14,10 @@ public class ConverterTest {
     public void fahrenheit_conversion_isCorrect() {
         assertEquals(0.0, Converter.toCelcius(32),0.01);
     }
+
+    @Test
+    public void pound_convertion_isCorrect(){
+        assertEquals(2.267962, Converter.poundToKg(5), 0.01);
+    }
+
 }

@@ -23,10 +23,10 @@ import static org.junit.Assert.*;
  */
 @RunWith(AndroidJUnit4.class)
 public class MainActivityUITest {
-    @Rule
+       @Rule
     public ActivityScenarioRule<MainActivity> activityRule =
             new ActivityScenarioRule<>(MainActivity.class);
-    @Test
+   /* @Test
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
@@ -44,5 +44,12 @@ public class MainActivityUITest {
     public void should_not_enter_empty_fah() {
         onView(withId(R.id.convert_btn)).perform(click());
         onView(withId(R.id.celcius_text)).check(matches(withText("ºC")));
+    }*/
+
+    @Test
+    public void can_enter_pounds(){
+        onView(withId(R.id.pound_input)).perform(typeText(""));
+        onView(withId(R.id.poundToKg_Button)).perform(click());
+        onView(withId(R.id.kg_text)).check(matches(withText("")));
     }
 }
