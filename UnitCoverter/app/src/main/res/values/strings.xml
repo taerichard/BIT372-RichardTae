@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Unit Coverter</string>
+    <string name="fah">Fahrenheit to Celsius</string>
+    <string name="pound">Pound to Kilogram</string>
+    <string name="inches">Inches to Feet</string>
+    <string name="ounces">Ounces to Milliliter</string>
+    <string-array name="conversations_array">
+        <item>Pounds</item>
+        <item>Fahrenheit</item>
+        <item>Inches</item>
+        <item>Ounces</item>
+    </string-array>
 </resources>
