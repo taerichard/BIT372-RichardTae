@@ -13,24 +13,24 @@
         android:layout_marginTop="180dp"
         android:text=""
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fahrenheit_input" />
+        app:layout_constraintTop_toBottomOf="@+id/input" />
 
-    <TextView
-        android:id="@+id/fahrenheit_title"
+    <EditText
+        android:id="@+id/convert_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="Fahrenheit to Celcius"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/fahrenheit_input"
+        app:layout_constraintBottom_toTopOf="@+id/input"
         app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <EditText
-        android:id="@+id/fahrenheit_input"
+        android:id="@+id/input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toStartOf="@+id/convert_btn"
         app:layout_constraintHorizontal_bias="0.373"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fahrenheit_title" />
+        app:layout_constraintTop_toBottomOf="@+id/convert_title" />
 
     <Button
         android:id="@+id/convert_btn"
@@ -50,7 +50,7 @@
         android:text="Convert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/fahrenheit_title"
+        app:layout_constraintStart_toEndOf="@+id/convert_title"
         app:layout_constraintTop_toBottomOf="@+id/spinner"
         app:layout_constraintVertical_bias="0.024" />
 
@@ -63,7 +63,7 @@
         app:layout_constraintEnd_toStartOf="@+id/convert_btn"
         app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fahrenheit_input" />
+        app:layout_constraintTop_toBottomOf="@+id/input" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -75,7 +75,7 @@
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/fahrenheit_title"
+        app:layout_constraintBottom_toTopOf="@+id/convert_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

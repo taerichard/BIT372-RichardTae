@@ -14,10 +14,13 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        EditText title = findViewById(R.id.convert_title);
 
         // spinner
         Spinner spinner = findViewById(R.id.spinner);
@@ -31,10 +34,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         Button fbtn = findViewById(R.id.convert_btn);
 
-        TextView kgText = findViewById(R.id.kg_text);
-
-        EditText finput = findViewById(R.id.fahrenheit_input);
+        EditText finput = findViewById(R.id.input);
         TextView ctxt = findViewById(R.id.celcius_text);
+
         fbtn.setOnClickListener(v -> {
             if (finput.getText().length() == 0)
                 return;
@@ -47,17 +49,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // An item was selected. You can retrieve the selected item using
         // parent.getItemAtPosition(pos)
+
+        //EditText title = view.findViewById(R.id.convert_title);
         switch(position){
-            case 0 :
+            case 0 :  // pound
+                // change title
+                //title.setText("FAH TO CEL".toString());
+                // user input
+                // convert
                 Log.i("INFO", parent.getItemAtPosition(0).toString());
                 break;
-            case 1 :
+            case 1 : // fah
                 Log.i("INFO", parent.getItemAtPosition(1).toString());
                 break;
-            case 2 :
+            case 2 : // inches
                 Log.i("INFO", parent.getItemAtPosition(2).toString());
                 break;
-            case 3 :
+            case 3 : // ounces
                 Log.i("INFO", parent.getItemAtPosition(3).toString());
                 break;
         }
