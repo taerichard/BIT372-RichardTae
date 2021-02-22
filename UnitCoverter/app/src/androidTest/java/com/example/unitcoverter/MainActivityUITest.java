@@ -35,7 +35,7 @@ public class MainActivityUITest {
 
     @Test
     public void can_enter_fahrenheit() {
-        onView(withId(R.id.fahrenheit_input)).perform(typeText("45"));
+        onView(withId(R.id.input)).perform(typeText("45"));
         onView(withId(R.id.convert_btn)).perform(click());
         onView(withId(R.id.celcius_text)).check(matches(withText("7.22 ºC")));
     }
